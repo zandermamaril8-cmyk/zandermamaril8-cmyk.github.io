@@ -164,8 +164,10 @@ h1 {
 /* ---------- portrait: tilted frame like the reference ---------- */
 .portrait {
   position: relative;
-  justify-self: center;
-  margin: 0;
+  align-self: stretch;
+  justify-self: stretch;
+  min-height: 0;
+  margin: 1.2rem 14px;
 }
 .portrait::before {
   content: "";
@@ -179,10 +181,10 @@ h1 {
 .portrait img {
   position: relative;
   display: block;
-  height: min(58dvh, 480px);
-  width: auto;
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center top;
   border-radius: 18px;
   filter: grayscale(.2) contrast(1.05);
 }
@@ -355,15 +357,14 @@ h1 {
 
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    align-content: center;
-    gap: 1.6rem;
-    padding: 0 1.4rem;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-content: stretch;
+    gap: 1.2rem;
+    padding: .6rem 1.6rem 1rem;
     text-align: center;
   }
-  .portrait { grid-row: 1; }
-  .portrait img { height: min(30dvh, 230px); }
-  .portrait::before { inset: -10px; }
+  .portrait { grid-row: 1; margin: .6rem 8px; }
+  .portrait::before { inset: -8px; }
   .hero-text { grid-row: 2; display: flex; flex-direction: column; align-items: center; }
   .label { margin-bottom: .6rem; font-size: .66rem; }
   h1 { max-width: 14ch; font-size: clamp(2rem, 9vw, 3rem); }
