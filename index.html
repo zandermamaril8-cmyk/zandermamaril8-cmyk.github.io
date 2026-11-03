@@ -26,6 +26,7 @@
 
   <div class="actions">
     <!-- FIX 1: popovertarget must match the id exactly (no spaces) -->
+    <button class = "btn" popovertaarget = "About me "> About me </button>
     <button class="btn" popovertarget="information">Information</button>
     <button class="btn" popovertarget="education">Education</button>
     <button class="btn" popovertarget="family">Family</button>
@@ -33,21 +34,23 @@
     <a class="btn-gmail" href="mailto:youremail@gmail.com">Gmail</a>
   </div>
 
-  <!-- About me: always visible, not clickable -->
-  <section id="about">
-    
-    <h2 class="tagline">An Aspiring <span class="highlight">Full-Stack Developer</span></h2>
-    <p>Hello I'm Zander Escosio Mamaril,
-                                                                            
-  ,I'm first year BSIT student majoring in
-  <strong class="highlight">Web Technology</strong> at the
-  <strong class="highlight">University of the Cordilleras</strong>.
-  I chose <strong class="highlight">full-stack development</strong> because
-  I want to build complete websites, from the pages people see to the systems
-  working behind them. I enjoy writing code, solving problems, and learning
-  how the front end, back end, and databases connect to make a web app work.
-</p> 
-  </section>
+  <!-- About me: now a button that opens a popover -->
+<button class="btn" popovertarget="about-pop">About Me</button>
+
+<div id="about-pop" popover>
+  <button class="close-btn" popovertarget="about-pop" popovertargetaction="hide" aria-label="Close">✕</button>
+
+  <h2 class="tagline">An Aspiring <span class="highlight">Full-Stack Developer</span></h2>
+  <p>
+    Hello, I'm Zander Escosio Mamaril, a first-year BSIT student majoring in
+    <strong class="highlight">Web Technology</strong> at the
+    <strong class="highlight">University of the Cordilleras</strong>.
+    I chose <strong class="highlight">full-stack development</strong> because
+    I want to build complete websites, from the pages people see to the systems
+    working behind them. I enjoy writing code, solving problems, and learning
+    how the front end, back end, and databases connect to make a web app work.
+  </p>
+</div>
 
   <!-- FIX 2: Information popup. The extra heading and buttons that were
        sitting on the page are now inside this popup. -->
