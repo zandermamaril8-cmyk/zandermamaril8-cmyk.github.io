@@ -377,3 +377,53 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   .pop[popover], .btn, .socials a { transition: none; }
 }
+
+#spell-loader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #0b0b14;
+  z-index: 9999;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+#spell-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spell-bar {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border-radius: 100px 100px 0 0;
+  background: rgba(255, 255, 255, .1);
+  overflow: hidden;
+}
+
+.spell-bar span {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #7b5cff, #00d4ff);
+  transform-origin: center top;
+  transform: rotate(0deg);
+  animation: spell-fill 2s ease-in-out infinite;
+}
+
+.spell-bar::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 160px;
+  height: 80px;
+  border-radius: 80px 80px 0 0;
+  background: #0b0b14;
+}
+
+@keyframes spell-fill {
+  to { transform: rotate(180deg); }
+}
