@@ -392,3 +392,42 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   .pop[popover], .btn, .socials a { transition: none; }
 }
+
+
+.close-btn { margin-top: 0; }
+
+.pop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.arrow,
+.arrow-spacer {
+  width: 44px;
+  height: 44px;
+  flex: none;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: transparent;
+  border: 1px solid rgba(124, 58, 237, .6);
+  border-radius: 50%;
+  color: #cfe3ff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  background: var(--line);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(124, 58, 237, .7);
+}
