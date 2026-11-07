@@ -19,10 +19,7 @@
     <nav class="menu" aria-label="Main">
       <a class="nav-link active" href="#top">Intro</a>
       <button class="nav-link" popovertarget="about-pop">About me</button>
-      <button class="nav-link" popovertarget="information">Personal Information</button>
-      <button class="nav-link" popovertarget="education">Education</button>
       <button class="nav-link" popovertarget="family">Family</button>
-      <button class="nav-link" popovertarget="location-pop">Location</button>
       <button class="nav-link" popovertarget="languages-pop">Languages</button>
     </nav>
 
@@ -54,8 +51,8 @@
 
   <!-- ============ POPUPS (everything opens on click) ============ -->
 
-  <!-- About me -->
-  <section class="pop" id="about-pop" popover>
+  <!-- About me (about + personal information + education) -->
+  <section class="pop wide" id="about-pop" popover>
     <h2>About me</h2>
     <h3 class="about-title">An aspiring full-stack developer</h3>
     <p>
@@ -67,59 +64,16 @@
       working behind them. I enjoy writing code, solving problems, and learning
       how the front end, back end, and databases connect to make a web app work.
     </p>
-    <button class="btn close-btn" popovertarget="about-pop" popovertargetaction="hide">Close</button>
-  </section>
 
-  <!-- Information -->
-  <section class="pop" id="information" popover>
-    <h2>Personal Information</h2>
-    <p>Click any button to see the details.</p>
+    <h3 class="section-title">Personal Information</h3>
+    <dl class="info-list">
+      <dt>Name</dt><dd>Zander Escosio Mamaril</dd>
+      <dt>Age</dt><dd>19 years old</dd>
+      <dt>Birthplace</dt><dd>Dagupan City, Pangasinan, Philippines</dd>
+      <dt>Religion</dt><dd>Roman Catholic</dd>
+    </dl>
 
-    <div class="info-buttons">
-      <button class="btn" popovertarget="name">Name</button>
-      <button class="btn" popovertarget="age">Age</button>
-      <button class="btn" popovertarget="birthplace">Birthplace</button>
-      <button class="btn" popovertarget="religion">Religion</button>
-      <button class="btn" popovertarget="awards">School Awards</button>
-    </div>
-
-    <button class="btn close-btn" popovertarget="information" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Name -->
-  <section class="pop" id="name" popover>
-    <h2>Name</h2>
-    <p>Zander Escosio Mamaril</p>
-    <p>BSIT student, major in Web Technology.</p>
-    <button class="btn close-btn" popovertarget="name" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Age -->
-  <section class="pop" id="age" popover>
-    <h2>Age and Birthday</h2>
-    <p>19 years old</p>
-    <p>September 15, 2007</p>
-    <button class="btn close-btn" popovertarget="age" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Birthplace -->
-  <section class="pop" id="birthplace" popover>
-    <h2>Birthplace</h2>
-    <p>Dagupan City, Pangasinan</p>
-    <p>Philippines</p>
-    <button class="btn close-btn" popovertarget="birthplace" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Religion -->
-  <section class="pop" id="religion" popover>
-    <h2>Religion</h2>
-    <p>Roman Catholic</p>
-    <button class="btn close-btn" popovertarget="religion" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Awards -->
-  <section class="pop" id="awards" popover>
-    <h2>School Awards</h2>
+    <h3 class="section-title">School Awards</h3>
     <ul class="awards-list">
       <li>
         <span class="year">2025</span> -
@@ -132,12 +86,8 @@
         <span class="school">Informatics Baguio City Inc</span>
       </li>
     </ul>
-    <button class="btn close-btn" popovertarget="awards" popovertargetaction="hide">Close</button>
-  </section>
 
-  <!-- Education -->
-  <section class="pop" id="education" popover>
-    <h2>Educational Attainment</h2>
+    <h3 class="section-title">Education</h3>
     <div class="timeline">
       <div class="timeline-item">
         <span class="year">2026 - Present</span>
@@ -162,7 +112,8 @@
         <p class="school">Bakakeng Elementary School</p>
       </div>
     </div>
-    <button class="btn close-btn" popovertarget="education" popovertargetaction="hide">Close</button>
+
+    <button class="btn close-btn" popovertarget="about-pop" popovertargetaction="hide">Close</button>
   </section>
 
   <!-- Family -->
@@ -187,13 +138,6 @@
       </div>
     </div>
     <button class="btn close-btn" popovertarget="family" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Location -->
-  <section class="pop" id="location-pop" popover>
-    <h2>Location</h2>
-    <p><strong>Bakakeng North Purok 8</strong><br>Baguio City, Benguet, Philippines</p>
-    <button class="btn close-btn" popovertarget="location-pop" popovertargetaction="hide">Close</button>
   </section>
 
   <!-- Languages -->
