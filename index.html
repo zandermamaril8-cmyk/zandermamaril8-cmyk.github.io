@@ -109,8 +109,8 @@
       <div class="pop-links">
         <button class="btn btn-up" hidden>&#8593; Up</button>
         <button class="btn btn-down">Down &#8595;</button>
-        <button class="btn" popovertarget="education-pop" popovertargetaction="show" data-last hidden>Educational &#8594;</button>
-        <button class="btn" popovertarget="family" popovertargetaction="show" data-last hidden>Family &#8594;</button>
+        <button class="btn" onclick="goTo('about-pop', 'education-pop')" data-last hidden>Educational &#8594;</button>
+        <button class="btn" onclick="goTo('about-pop', 'family')" data-last hidden>Family &#8594;</button>
       </div>
     </div>
   </section>
@@ -143,9 +143,9 @@
       </div>
     </div>
     <div class="pop-nav">
-      <button class="btn" popovertarget="about-pop" popovertargetaction="show">&#8592; Back</button>
+      <button class="btn" onclick="goTo('education-pop', 'about-pop')">&#8592; Back</button>
       <button class="btn close-btn" popovertarget="education-pop" popovertargetaction="hide">Close</button>
-      <button class="btn primary" popovertarget="family" popovertargetaction="show">Next &#8594;</button>
+      <button class="btn primary" onclick="goTo('education-pop', 'family')">Next &#8594;</button>
     </div>
   </section>
 
@@ -171,7 +171,7 @@
       </div>
     </div>
     <div class="pop-nav">
-      <button class="btn" popovertarget="education-pop" popovertargetaction="show">&#8592; Back</button>
+      <button class="btn" onclick="goTo('family', 'education-pop')">&#8592; Back</button>
       <button class="btn close-btn" popovertarget="family" popovertargetaction="hide">Close</button>
     </div>
   </section>
@@ -199,6 +199,12 @@
   </div>
 
   <script>
+    // Close the current popup, then open the next/previous one
+    function goTo(from, to) {
+      document.getElementById(from).hidePopover();
+      document.getElementById(to).showPopover();
+    }
+
     // About me: Down / Up buttons instead of scrolling
     const about = document.getElementById('about-pop');
     const pages = about.querySelectorAll('.page');
