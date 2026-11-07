@@ -19,8 +19,8 @@
     <nav class="menu" aria-label="Main">
       <a class="nav-link active" href="#top">Intro</a>
       <button class="nav-link" popovertarget="about-pop">About me</button>
+      <button class="nav-link" popovertarget="education-pop">Educational Attainment</button>
       <button class="nav-link" popovertarget="family">Family</button>
-      <button class="nav-link" popovertarget="languages-pop">Languages</button>
     </nav>
 
     <a class="resume" href="resume.pdf" download>Download Resume</a>
@@ -51,7 +51,7 @@
 
   <!-- ============ POPUPS (everything opens on click) ============ -->
 
-  <!-- About me (about + personal information + education) -->
+  <!-- About me -->
   <section class="pop wide" id="about-pop" popover>
     <h2>About me</h2>
     <h3 class="about-title">An aspiring full-stack developer</h3>
@@ -87,7 +87,29 @@
       </li>
     </ul>
 
-    <h3 class="section-title">Education</h3>
+    <h3 class="section-title">Skills</h3>
+    <div class="languages-container">
+      <span class="lang-badge"><span class="lang-icon">P</span>Python</span>
+      <span class="lang-badge"><span class="lang-icon">&lt;&gt;</span>HTML</span>
+      <span class="lang-badge"><span class="lang-icon">{}</span>CSS</span>
+      <span class="lang-badge"><span class="lang-icon">J</span>Java</span>
+    </div>
+
+    <h3 class="section-title">Hobbies</h3>
+    <ul class="hobby-list">
+      <li>Working out</li>
+      <li>Reading novels, manhwa, and manga</li>
+      <li>Journaling</li>
+      <li>Sudoku</li>
+      <li>Creative writing</li>
+    </ul>
+
+    <button class="btn close-btn" popovertarget="about-pop" popovertargetaction="hide">Close</button>
+  </section>
+
+  <!-- Educational Attainment -->
+  <section class="pop" id="education-pop" popover>
+    <h2>Educational Attainment</h2>
     <div class="timeline">
       <div class="timeline-item">
         <span class="year">2026 - Present</span>
@@ -112,8 +134,7 @@
         <p class="school">Bakakeng Elementary School</p>
       </div>
     </div>
-
-    <button class="btn close-btn" popovertarget="about-pop" popovertargetaction="hide">Close</button>
+    <button class="btn close-btn" popovertarget="education-pop" popovertargetaction="hide">Close</button>
   </section>
 
   <!-- Family -->
@@ -138,18 +159,6 @@
       </div>
     </div>
     <button class="btn close-btn" popovertarget="family" popovertargetaction="hide">Close</button>
-  </section>
-
-  <!-- Languages -->
-  <section class="pop" id="languages-pop" popover>
-    <h2>Languages</h2>
-    <div class="languages-container">
-      <span class="lang-badge"><span class="lang-icon">P</span>Python</span>
-      <span class="lang-badge"><span class="lang-icon">&lt;&gt;</span>HTML</span>
-      <span class="lang-badge"><span class="lang-icon">{}</span>CSS</span>
-      <span class="lang-badge"><span class="lang-icon">J</span>Java</span>
-    </div>
-    <button class="btn close-btn" popovertarget="languages-pop" popovertargetaction="hide">Close</button>
   </section>
 
   <!-- Contact -->
