@@ -1,3 +1,4 @@
+
 /* =========================================================
    Z.E.M portfolio: one screen, no scrolling, everything
    opens on click. Layout copied from the reference photo,
@@ -237,6 +238,20 @@ h1 {
 
 .close-btn { margin-top: 1.2rem; }
 
+/* combined About me popup */
+.pop.wide[popover] { width: min(92vw, 560px); }
+.section-title {
+  margin: 1.6rem 0 .8rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid rgba(124, 58, 237, .5);
+  color: var(--spell-soft);
+  font: 600 1.05rem/1.2 var(--display);
+  letter-spacing: .04em;
+}
+.info-list { display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.2rem; margin: 0; }
+.info-list dt { color: var(--spell-soft); font-weight: 600; }
+.info-list dd { margin: 0; color: var(--muted); }
+
 .info-buttons { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 .4rem; }
 
 .awards-list { padding-left: 1.1rem; color: var(--muted); line-height: 1.6; }
@@ -377,4 +392,3 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   .pop[popover], .btn, .socials a { transition: none; }
 }
-
