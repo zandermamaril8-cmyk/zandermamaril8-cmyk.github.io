@@ -191,29 +191,7 @@
     <div class="spell-bar"><span></span></div>
   </div>
 
-  <script>
-    // About me: Down / Up buttons instead of scrolling
-    const about = document.getElementById('about-pop');
-    const pages = about.querySelectorAll('.page');
-    const up = about.querySelector('.btn-up');
-    const down = about.querySelector('.btn-down');
-    const last = about.querySelectorAll('[data-last]');
-    const count = about.querySelector('.page-count');
-    let current = 0;
-
-    function show(n) {
-      current = n;
-      pages.forEach((p, i) => p.hidden = i !== current);
-      up.hidden = current === 0;
-      down.hidden = current === pages.length - 1;
-      last.forEach(b => b.hidden = current !== pages.length - 1);
-      count.textContent = (current + 1) + ' / ' + pages.length;
-    }
-
-    down.addEventListener('click', () => show(current + 1));
-    up.addEventListener('click', () => show(current - 1));
-    about.addEventListener('toggle', e => { if (e.newState === 'closed') show(0); });
-  </script>
+ 
 
 </body>
 </html>
