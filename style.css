@@ -445,3 +445,7 @@ h1 {
 .page-count { color: var(--muted); font-size: .8rem; letter-spacing: .1em; }
 .pop-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .6rem; }
  
+
+/* cleaner Up / Down arrows in Personal Information */
+.pop-links { flex-wrap: nowrap; align-items: center; justify-content: flex-end; }
+.page-count { white-space: nowrap; }
