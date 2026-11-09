@@ -20,6 +20,7 @@
       <a class="nav-link active" href="#top">Intro</a>
       <button class="nav-link" popovertarget="about-pop">Personal Information</button>
       <button class="nav-link" popovertarget="education-pop">Educational Attainment</button>
+      <button class="nav-link" popovertarget="achievements-pop">Achievements</button>
       <button class="nav-link" popovertarget="family">Family</button>
     </nav>
 
@@ -80,6 +81,7 @@
         <dt>Email</dt><dd>zandermamaril8@gmail.com</dd>
         <dt>Place of Birth</dt><dd>Dagupan City, Pangasinan</dd>
         
+        
       </dl>
     </div>
 
@@ -122,7 +124,9 @@
         <button class="btn btn-up" hidden>&#8593; Up</button>
         <button class="btn btn-down">Down &#8595;</button>
         <button class="btn" onclick="goTo('about-pop', 'education-pop')" data-last hidden>Educational &#8594;</button>
+        <button class="btn primary" onclick="goTo('education-pop', 'achievements-pop')">Next &#8594;</button>
         <button class="btn" onclick="goTo('about-pop', 'family')" data-last hidden>Family &#8594;</button>
+        <button class="btn" onclick="goTo('family', 'achievements-pop')">&#8592; Back</button>
       </div>
     </div>
   </section>
@@ -161,6 +165,28 @@
     </div>
   </section>
 
+  <!-- Achievements -->
+  <section class="pop" id="achievements-pop" popover>
+    <h2>Achievements</h2>
+    <ul class="awards-list">
+      <li>
+        <span class="year">2025</span> -
+        <strong>Call of Duty Competition</strong>,
+        <span class="school">Informatics Baguio City Center Inc</span>
+      </li>
+      <li>
+        <span class="year">2026</span> -
+        <strong>Java Programming Competition</strong>,
+        <span class="school">Informatics Baguio City Inc</span>
+      </li>
+    </ul>
+    <div class="pop-nav">
+      <button class="btn" onclick="goTo('achievements-pop', 'education-pop')">&#8592; Back</button>
+      <button class="btn close-btn" popovertarget="achievements-pop" popovertargetaction="hide">Close</button>
+      <button class="btn primary" onclick="goTo('achievements-pop', 'family')">Next &#8594;</button>
+    </div>
+  </section>
+ 
   <!-- Family -->
   <section class="pop" id="family" popover>
     <h2>Family</h2>
