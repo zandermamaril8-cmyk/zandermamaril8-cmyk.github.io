@@ -19,7 +19,6 @@
     <nav class="menu" aria-label="Main">
       <a class="nav-link active" href="#top">Intro</a>
       <button class="nav-link" popovertarget="about-pop">Personal Information</button>
-      <button class="nav-link" popovertarget="education-pop">Educational Attainment</button>
       <button class="nav-link" popovertarget="achievements-pop">Achievements</button>
       <button class="nav-link" popovertarget="family">Family</button>
     </nav>
@@ -76,6 +75,7 @@
         <dt>Name</dt><dd>Zander Escosio Mamaril</dd>
         <dt>Age and Birthdate </dt><dd>19 years old 
            September 15 2007</dd>
+        <dt>Height<dt><dd>5'5</dd>
         <dt>Civil status</dt><dd>Single</dd>
         <dt>University</dt><dd>University of the Cordilleras</dd>
         <dt>Email</dt><dd>zandermamaril8@gmail.com</dd>
@@ -85,7 +85,36 @@
       </dl>
     </div>
 
-    <!-- Page 3 -->
+    <!-- Page 3: Educational Attainment -->
+    <div class="page" hidden>
+      <h3 class="section-title">Educational Attainment</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="year">2026 - Present</span>
+          <h3>Bachelor of Science in Information Technology</h3>
+          <p>Major in Web Technology</p>
+          <p class="school">University of the Cordilleras</p>
+        </div>
+        <div class="timeline-item">
+          <span class="year">2024 - 2026</span>
+          <h3>Senior High School</h3>
+          <p>ICT Programming</p>
+          <p class="school">Informatics Baguio</p>
+        </div>
+        <div class="timeline-item">
+          <span class="year">2020 - 2024</span>
+          <h3>Junior High School</h3>
+          <p class="school">Bakakeng National High School</p>
+        </div>
+        <div class="timeline-item">
+          <span class="year">2013 - 2020</span>
+          <h3>Elementary</h3>
+          <p class="school">Bakakeng Elementary School</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 4: Skills & Hobbies -->
     <div class="page" hidden>
       <h3 class="section-title">Skills</h3>
       <div class="languages-container">
@@ -105,7 +134,7 @@
       </ul>
     </div>
 
-        <!-- Page 4 -->
+        <!-- Page 5: Goal -->
     <div class="page" hidden>
       <h3 class="section-title">Goal</h3>
       <p>
@@ -123,42 +152,8 @@
       <div class="pop-links">
         <button class="arrow btn-up" aria-label="Previous page" hidden>&#8593;</button>
         <button class="arrow btn-down" aria-label="Next page">&#8595;</button>
-        <button class="btn primary" onclick="goTo('about-pop', 'education-pop')" data-last hidden>Educational &#8594;</button>
+        <button class="btn primary" onclick="goTo('about-pop', 'achievements-pop')" data-last hidden>Achievements &#8594;</button>
       </div>
-    </div>
-  </section>
-
-  <!-- Educational Attainment -->
-  <section class="pop" id="education-pop" popover>
-    <h2>Educational Attainment</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="year">2026 - Present</span>
-        <h3>Bachelor of Science in Information Technology</h3>
-        <p>Major in Web Technology</p>
-        <p class="school">University of the Cordilleras</p>
-      </div>
-      <div class="timeline-item">
-        <span class="year">2024 - 2026</span>
-        <h3>Senior High School</h3>
-        <p>ICT Programming</p>
-        <p class="school">Informatics Baguio</p>
-      </div>
-      <div class="timeline-item">
-        <span class="year">2020 - 2024</span>
-        <h3>Junior High School</h3>
-        <p class="school">Bakakeng National High School</p>
-      </div>
-      <div class="timeline-item">
-        <span class="year">2013 - 2020</span>
-        <h3>Elementary</h3>
-        <p class="school">Bakakeng Elementary School</p>
-      </div>
-    </div>
-    <div class="pop-nav">
-      <button class="btn" onclick="goTo('education-pop', 'about-pop')">&#8592; Back</button>
-      <button class="btn close-btn" popovertarget="education-pop" popovertargetaction="hide">Close</button>
-      <button class="btn primary" onclick="goTo('education-pop', 'achievements-pop')">Next &#8594;</button>
     </div>
   </section>
 
@@ -178,7 +173,7 @@
       </li>
     </ul>
     <div class="pop-nav">
-      <button class="btn" onclick="goTo('achievements-pop', 'education-pop')">&#8592; Back</button>
+      <button class="btn" onclick="goTo('achievements-pop', 'about-pop')">&#8592; Back</button>
       <button class="btn close-btn" popovertarget="achievements-pop" popovertargetaction="hide">Close</button>
       <button class="btn primary" onclick="goTo('achievements-pop', 'family')">Next &#8594;</button>
     </div>
