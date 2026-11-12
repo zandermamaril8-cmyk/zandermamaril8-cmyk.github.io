@@ -455,3 +455,7 @@ h1 {
 .pop.wide[popover] { overflow-y: auto; }
 .pop.wide .timeline { margin-top: .6rem; }
 .pop.wide .timeline-item { margin-bottom: 1rem; }
+
+/* keep labels in column 1 and values in column 2 */
+.info-list dt { grid-column: 1; }
+.info-list dd { grid-column: 2; margin: 0; overflow-wrap: anywhere; }
