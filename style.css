@@ -449,3 +449,9 @@ h1 {
 /* cleaner Up / Down arrows in Personal Information */
 .pop-links { flex-wrap: nowrap; align-items: center; justify-content: flex-end; }
 .page-count { white-space: nowrap; }
+
+
+/* Educational Attainment page inside Personal Information */
+.pop.wide[popover] { overflow-y: auto; }
+.pop.wide .timeline { margin-top: .6rem; }
+.pop.wide .timeline-item { margin-bottom: 1rem; }
