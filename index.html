@@ -50,110 +50,105 @@
 
   <!-- ============ POPUPS (everything opens on click) ============ -->
 
-  <!-- About me (pages: click Down instead of scrolling) -->
-  <section class="pop wide" id="about-pop" popover>
-    <h2>Personal Information</h2>
+  <!-- About me: card grid -->
+  <section class="pop about" id="about-pop" popover>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+      <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4ZM7.5 10.5l2 2M10.5 7.5l2 2M13.5 4.5l2 2M4.5 13.5l2 2"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    </svg>
 
-    <!-- Page 1 -->
-    <div class="page">
-      <h3 class="about-title">An aspiring full-stack developer</h3>
-      <p>
-        Hello, I'm Zander Escosio Mamaril, a first-year BSIT student majoring in
-        <strong class="highlight">Web Technology</strong> at the
-        <strong class="highlight">University of the Cordilleras</strong>.
-        I chose <strong class="highlight">full-stack development</strong> because
-        I want to build complete websites, from the pages people see to the systems
-        working behind them. I enjoy writing code, solving problems, and learning
-        how the front end, back end, and databases connect to make a web app work.
-      </p>
-    </div>
+    <h2>About Zander Escosio <span class="accent">Mamaril</span></h2>
 
-    <!-- Page 2 -->
-    <div class="page" hidden>
-      <h3 class="section-title">Personal Information</h3>
-      <dl class="info-list">
-        <dt>Name</dt><dd>Zander Escosio Mamaril</dd>
-        <dt>Age and Birthdate </dt><dd>19 years old 
-           September 15 2007</dd>
-        <dt>Civil status</dt><dd>Single</dd>
-        <dt>University</dt><dd>University of the Cordilleras</dd>
-        <dt>Email</dt><dd>zandermamaril8@gmail.com</dd>
-        <dt>Place of Birth</dt><dd>Dagupan City, Pangasinan</dd>
-        <dt>Height</dt><dd>5'5</dd>
-        
-        
-      </dl>
-    </div>
+    <div class="about-grid">
+      <article class="info-card span-3">
+        <h3>Background</h3>
+        <p>
+          Hello, I'm Zander, a first-year <strong class="highlight">BSIT student</strong>
+          majoring in <strong class="highlight">Web Technology</strong> at the
+          <strong class="highlight">University of the Cordilleras</strong>.
+          I chose <strong class="highlight">full-stack development</strong> because I want
+          to build complete websites, from the pages people see to the systems working
+          behind them. I enjoy writing code, solving problems, and learning how the front
+          end, back end, and databases connect to make a web app work.
+        </p>
+      </article>
 
-    <!-- Page 3: Educational Attainment -->
-    <div class="page" hidden>
-      <h3 class="section-title">Educational Attainment</h3>
-      <div class="timeline">
-        <div class="timeline-item">
-          <span class="year">2026 - Present</span>
-          <h3>Bachelor of Science in Information Technology</h3>
-          <p>Major in Web Technology</p>
-          <p class="school">University of the Cordilleras</p>
+      <article class="info-card span-3">
+        <h3>Goal and Plan</h3>
+        <p>
+          My goal is to become a <strong class="highlight">full-stack developer</strong>
+          who can build complete web applications, from the pages people see to the
+          databases behind them. I also want to learn
+          <strong class="highlight">cybersecurity</strong> so the websites I build are
+          secure and safe to use.
+        </p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-pin"/></svg>Birthplace</h3>
+        <p>Dagupan City, Pangasinan</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-user"/></svg>Age</h3>
+        <p>September 15, 2007 (19 years old)</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-cap"/></svg>Course</h3>
+        <p>1st Year BSIT - Web Technology</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-bulb"/></svg>Hobbies and Interests</h3>
+        <p>Working out, reading novels, manhwa, and manga, journaling, sudoku, creative writing</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-code"/></svg>Technical Skills</h3>
+        <p>Python, HTML, CSS, Java</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-mail"/></svg>Email</h3>
+        <p class="email">zandermamaril8@gmail.com</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-ruler"/></svg>Height</h3>
+        <p>5'5"</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-heart"/></svg>Civil Status</h3>
+        <p>Single</p>
+      </article>
+
+      <article class="info-card span-2">
+        <h3><svg class="ico"><use href="#i-cap"/></svg>University</h3>
+        <p>University of the Cordilleras</p>
+      </article>
+
+      <article class="info-card span-6">
+        <h3><svg class="ico"><use href="#i-cap"/></svg>Educational Attainment</h3>
+        <div class="edu-row">
+          <div><span class="year">2026 - Present</span><strong>BS Information Technology</strong><p>Web Technology, University of the Cordilleras</p></div>
+          <div><span class="year">2024 - 2026</span><strong>Senior High School</strong><p>ICT Programming, Informatics Baguio</p></div>
+          <div><span class="year">2020 - 2024</span><strong>Junior High School</strong><p>Bakakeng National High School</p></div>
+          <div><span class="year">2013 - 2020</span><strong>Elementary</strong><p>Bakakeng Elementary School</p></div>
         </div>
-        <div class="timeline-item">
-          <span class="year">2024 - 2026</span>
-          <h3>Senior High School</h3>
-          <p>ICT Programming</p>
-          <p class="school">Informatics Baguio</p>
-        </div>
-        <div class="timeline-item">
-          <span class="year">2020 - 2024</span>
-          <h3>Junior High School</h3>
-          <p class="school">Bakakeng National High School</p>
-        </div>
-        <div class="timeline-item">
-          <span class="year">2013 - 2020</span>
-          <h3>Elementary</h3>
-          <p class="school">Bakakeng Elementary School</p>
-        </div>
-      </div>
+      </article>
     </div>
 
-    <!-- Page 4: Skills & Hobbies -->
-    <div class="page" hidden>
-      <h3 class="section-title">Skills</h3>
-      <div class="languages-container">
-        <span class="lang-badge"><span class="lang-icon">P</span>Python</span>
-        <span class="lang-badge"><span class="lang-icon">&lt;&gt;</span>HTML</span>
-        <span class="lang-badge"><span class="lang-icon">{}</span>CSS</span>
-        <span class="lang-badge"><span class="lang-icon">J</span>Java</span>
-      </div>
-
-      <h3 class="section-title">Hobbies</h3>
-      <ul class="hobby-list">
-        <li>Working out</li>
-        <li>Reading novels, manhwa, and manga</li>
-        <li>Journaling</li>
-        <li>Sudoku</li>
-        <li>Creative writing</li>
-      </ul>
-    </div>
-
-        <!-- Page 5: Goal -->
-    <div class="page" hidden>
-      <h3 class="section-title">Goal</h3>
-      <p>
-        My goal is to become a <strong class="highlight">full-stack developer</strong>
-        who can build complete web applications, from the pages people see to the
-        databases behind them. I also want to learn
-        <strong class="highlight">cybersecurity</strong> so the websites I build are
-        secure and safe to use.
-      </p>
-    </div>
-    
     <div class="pop-nav">
       <button class="btn close-btn" popovertarget="about-pop" popovertargetaction="hide">Close</button>
-      <span class="page-count">1 / 4</span>
-      <div class="pop-links">
-        <button class="arrow btn-up" aria-label="Previous page" hidden>&#8593;</button>
-        <button class="arrow btn-down" aria-label="Next page">&#8595;</button>
-        <button class="btn primary" onclick="goTo('about-pop', 'achievements-pop')" data-last hidden>Achievements &#8594;</button>
-      </div>
+      <button class="btn primary" onclick="goTo('about-pop', 'achievements-pop')">Achievements &#8594;</button>
     </div>
   </section>
 
@@ -239,28 +234,6 @@
       document.getElementById(from).hidePopover();
       document.getElementById(to).showPopover();
     }
-
-    // About me: Down / Up buttons instead of scrolling
-    const about = document.getElementById('about-pop');
-    const pages = about.querySelectorAll('.page');
-    const up = about.querySelector('.btn-up');
-    const down = about.querySelector('.btn-down');
-    const last = about.querySelectorAll('[data-last]');
-    const count = about.querySelector('.page-count');
-    let current = 0;
-
-    function show(n) {
-      current = n;
-      pages.forEach((p, i) => p.hidden = i !== current);
-      up.hidden = current === 0;
-      down.hidden = current === pages.length - 1;
-      last.forEach(b => b.hidden = current !== pages.length - 1);
-      count.textContent = (current + 1) + ' / ' + pages.length;
-    }
-
-    down.addEventListener('click', () => show(current + 1));
-    up.addEventListener('click', () => show(current - 1));
-    about.addEventListener('toggle', e => { if (e.newState === 'closed') show(0); });
   </script>
 
 </body>
