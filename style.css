@@ -610,3 +610,23 @@ h1 {
 @media (min-width: 721px) and (max-width: 900px) {
   .edu-row { grid-template-columns: 1fr 1fr; }
 }
+
+
+.pop.wide .page { min-height: 0; }
+
+.pop.wide[popover],
+.pop.about[popover] {
+  overflow: hidden;
+  max-height: 94dvh;
+  padding: .9rem 1rem;
+}
+
+.pop.wide .info-list { gap: .35rem .8rem; }
+.pop.wide .info-list dt,
+.pop.wide .info-list dd {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: .85rem;
+  line-height: 1.3;
+}
