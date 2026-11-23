@@ -208,32 +208,59 @@
     </div>
   </section>
 
- <section class="pop" id="family" popover>
-  <h2>Family & Friends</h2>
-  <div class="fam-grid">
-    <div class="fam-card" style="background-image: linear-gradient(to top, #000 0%, rgba(0,0,0,.85) 18%, rgba(0,0,0,0) 42%), url('akopapa.jpg'); background-position: center, 0% 12%;">
-      <h3>Jeffrey Young Mamaril</h3>
-      <p>Father</p>
-    </div>
-    <div class="fam-card" style="background-image: linear-gradient(to top, #000 0%, rgba(0,0,0,.85) 18%, rgba(0,0,0,0) 42%), url('akomama.jpg'); background-position: center, 50% 0%;">
-      <h3>Maribeth Escosio Mamaril</h3>
-      <p>Mother</p>
-    </div>
-    <div class="fam-card">
-      <h3>Zander Escosio Mamaril</h3>
-      <p>Eldest Sibling</p>
-    </div>
-    <div class="fam-card"style="background-image: linear-gradient(to top, #000 0%, rgba(0,0,0,.85) 18%, rgba(0,0,0,0) 42%), url('sisterlol.jpeg'); background-position: center, 50% 0%;" >
-      <h3>Nicole Escosio Mamaril</h3>
-      <p>Younger Sibling</p>
-    </div>
-  </div>
-  <div class="pop-nav">
-    <button class="btn" onclick="goTo('family', 'achievements-pop')">&#8592; Back</button>
-    <button class="btn close-btn" popovertarget="family" popovertargetaction="hide">Close</button>
-  </div>
-</section> 
+  <!-- Family & Friends -->
+  <section class="pop fam-pop" id="family" popover>
+    <header class="fam-head">
+      <h2>Family &amp; Friends</h2>
+      <p class="fam-tag">The people behind the code</p>
+    </header>
 
+    <div class="fam-body">
+      <h3 class="fam-section">Family</h3>
+      <div class="fam-grid">
+        <article class="fam-card" style="--i:0">
+          <img src="akopapa.jpg" alt="Jeffrey Young Mamaril, father" style="object-position: 50% 12%">
+          <div class="fam-info"><h4>Jeffrey Young Mamaril</h4><span class="role">Father</span></div>
+        </article>
+        <article class="fam-card" style="--i:1">
+          <img src="akomama.jpg" alt="Maribeth Escosio Mamaril, mother" style="object-position: 50% 0%">
+          <div class="fam-info"><h4>Maribeth Escosio Mamaril</h4><span class="role">Mother</span></div>
+        </article>
+        <article class="fam-card" style="--i:2">
+          <img src="sisterlol.jpeg" alt="Nicole Escosio Mamaril, younger sister" style="object-position: 50% 0%">
+          <div class="fam-info"><h4>Nicole Escosio Mamaril</h4><span class="role">Younger Sibling</span></div>
+        </article>
+      </div>
+
+      <h3 class="fam-section">Friends</h3>
+      <div class="fam-grid">
+        <!-- EDIT: replace the name, the letter, and (optionally) swap the .avatar div for an <img src="photo.jpg" alt="..."> -->
+        <article class="fam-card friend" style="--i:3; --h:265">
+          <div class="avatar" aria-hidden="true">A</div>
+          <div class="fam-info"><h4>Friend Name</h4><span class="role">Friend</span></div>
+        </article>
+        <article class="fam-card friend" style="--i:4; --h:225">
+          <div class="avatar" aria-hidden="true">B</div>
+          <div class="fam-info"><h4>Friend Name</h4><span class="role">Friend</span></div>
+        </article>
+        <article class="fam-card friend" style="--i:5; --h:200">
+          <div class="avatar" aria-hidden="true">C</div>
+          <div class="fam-info"><h4>Friend Name</h4><span class="role">Friend</span></div>
+        </article>
+      </div>
+
+      <p class="design-note">
+        <strong>Design notes:</strong> analogous violet&ndash;indigo&ndash;blue palette with a complementary
+        gold accent (60-30-10 rule), Gestalt proximity and similarity for grouping, and
+        Nielsen&rsquo;s feedback heuristic for hover and tap states.
+      </p>
+    </div>
+
+    <div class="pop-nav">
+      <button class="btn" onclick="goTo('family', 'achievements-pop')">&#8592; Back</button>
+      <button class="btn close-btn" popovertarget="family" popovertargetaction="hide">Close</button>
+    </div>
+  </section>
 
   <!-- Contact -->
   <section class="pop" id="contact-pop" popover>
