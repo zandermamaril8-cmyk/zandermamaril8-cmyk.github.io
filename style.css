@@ -855,3 +855,4 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   .plate { animation: none; opacity: 1; transition: none; }
 }
+.plate-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
