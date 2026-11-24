@@ -780,75 +780,88 @@ h1 {
 }
 
 
-/* ===== Family & Friends: 4 plates in one row, no scrolling ===== */
-.pop.fam-pop[popover] { width: min(96vw, 1200px); }
+/* ===== Family & Friends: photo collage, no scrolling ===== */
+.pop.fam-pop[popover] { width: min(96vw, 1100px); }
 
 .plate-grid {
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr);
-  gap: 14px;
-  padding: .5rem 0 .2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 1.25fr 1fr;
+  gap: 16px;
+  padding: .6rem 0 .3rem;
 }
 
+/* cream photo frame like the template */
 .plate {
+  position: relative;
   display: flex;
-  flex-direction: column;
   min-height: 0;
+  padding: 6px;
   overflow: hidden;
-  background: #0b0f1a;
-  border: 1px solid rgba(245, 184, 61, .35);
+  background: #f7f1e6;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .5);
   opacity: 0;
   animation: card-in .6s cubic-bezier(.2, .8, .2, 1) forwards;
   animation-delay: calc(var(--i) * 110ms + 150ms);
-  transition: transform .3s, border-color .3s, box-shadow .3s;
+  transition: transform .3s, box-shadow .3s;
 }
 .plate:hover {
   transform: translateY(-4px);
-  border-color: var(--gold);
-  box-shadow: 0 10px 26px rgba(124, 58, 237, .45);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, .5);
 }
 
-.plate-photo { flex: 1 1 0; min-height: 0; background: #05070d; }
+/* where each photo goes (order in your HTML: father, mother, sister, friends) */
+.plate:nth-child(3) { grid-column: 1 / 3; grid-row: 1; }      /* sister: big wide */
+.plate:nth-child(4) { grid-column: 3;     grid-row: 1 / 3; }  /* friends: tall */
+.plate:nth-child(1) { grid-column: 1;     grid-row: 2; }      /* father: small */
+.plate:nth-child(2) { grid-column: 2;     grid-row: 2; height: 88%; align-self: end; } /* mother: smaller, staggered */
+
+.plate-photo { flex: 1 1 auto; min-width: 0; min-height: 0; background: #05070d; }
 .plate-photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* sister: whole photo visible, nobody cut off */
-.plate.sister img { object-fit: contain; }
+.plate.sister img { object-fit: cover; object-position: center; }
+.plate:nth-child(4) img { object-position: center 30%; }
 
-.plate-text { flex: none; padding: .75rem .9rem .9rem; }
+/* name sits on top of the photo */
+.plate-text {
+  position: absolute;
+  left: 6px; right: 6px; bottom: 6px;
+  padding: 1.8rem .8rem .65rem;
+  background: linear-gradient(to top, rgba(5, 7, 13, .92), transparent);
+}
 .plate-index {
   display: block;
-  margin-bottom: .3rem;
+  margin-bottom: .25rem;
   color: var(--gold);
-  font: 500 .68rem/1 ui-monospace, "JetBrains Mono", Menlo, monospace;
+  font: 500 .62rem/1 ui-monospace, Menlo, monospace;
   letter-spacing: .2em;
   text-transform: uppercase;
 }
 .plate-text h4 {
-  margin: 0 0 .25rem;
+  margin: 0;
   color: #fff;
-  font: 700 clamp(1rem, 1.8vw, 1.3rem)/1.2 var(--body);
+  font: 700 clamp(.95rem, 1.5vw, 1.2rem)/1.2 var(--body);
 }
 .plate-text p {
-  margin: 0;
+  margin: .15rem 0 0;
   color: var(--muted);
-  font: 400 .75rem/1.5 ui-monospace, "JetBrains Mono", Menlo, monospace;
+  font: 400 .7rem/1.4 ui-monospace, Menlo, monospace;
 }
 
-/* phones: 2 x 2 */
+/* phones */
 @media (max-width: 720px) {
-  .plate-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-  .plate-text { padding: .5rem .6rem .6rem; }
+  .plate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .plate:nth-child(3) { grid-column: 1 / -1; grid-row: 1; }
+  .plate:nth-child(1) { grid-column: 1; grid-row: 2; }
+  .plate:nth-child(2) { grid-column: 2; grid-row: 2; height: 100%; align-self: stretch; }
+  .plate:nth-child(4) { grid-column: 1 / -1; grid-row: 3; }
   .plate-text p { display: none; }
 }
 
