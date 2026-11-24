@@ -797,30 +797,9 @@ h1 {
   overflow: hidden;
 }
 
-/* Family & Friends: fits one screen, no scrolling */
-.fam-body {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;              /* removes the scrollbar */
-  padding: .4rem 0 .2rem;
+.fam-card.sister img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #0b1020;
 }
-.fam-section { flex: none; margin: .5rem 0 .5rem; }
 
-/* family row gets more height than friends row */
-.fam-grid {
-  flex: 3 1 0;
-  min-height: 0;
-  grid-template-rows: minmax(0, 1fr);
-}
-.fam-grid:last-of-type { flex-grow: 2; }
-
-/* cards fill the row instead of forcing 3:4 */
-.fam-card { aspect-ratio: auto; height: 100%; min-height: 0; }
-
-/* sister: show the right side of the photo */
-.fam-card.sister img { object-position: 100% 30%; }
-
-@media (max-width: 720px) {
-  .fam-grid { grid-template-rows: repeat(2, minmax(0, 1fr)); }
-  .fam-grid .fam-card:last-child:nth-child(odd) { aspect-ratio: auto; }
-}
