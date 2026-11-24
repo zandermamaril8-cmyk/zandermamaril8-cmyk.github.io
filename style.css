@@ -905,3 +905,31 @@ h1 {
 .plate:nth-child(2) .plate-photo { background: #f7f1e6; }
 .plate:nth-child(1) img,
 .plate:nth-child(2) img { object-fit: contain; }
+
+
+/* ===== About popup: buttons always visible, cards scroll ===== */
+.pop.about:popover-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.pop.about .about-grid {
+  flex: 1 1 auto;
+  min-height: 0;          /* lets the grid shrink so it can scroll */
+  overflow-y: auto;
+  padding-right: .4rem;
+}
+
+.pop.about .pop-nav {
+  flex: none;             /* never gets pushed out of view */
+  margin-top: .8rem;
+}
+
+/* slim scrollbar that matches the purple theme */
+.pop.about .about-grid::-webkit-scrollbar { width: 6px; }
+.pop.about .about-grid::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, .6);
+  border-radius: 6px;
+}
+.pop.about .info-card { padding: .6rem .8rem; }
+.pop.about .about-grid { gap: .6rem; }
