@@ -869,3 +869,39 @@ h1 {
   .plate { animation: none; opacity: 1; transition: none; }
 }
 .plate-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+
+/* ===== Collage v2: frames that fit portrait photos ===== */
+.plate-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.plate:nth-child(3) { grid-column: 1 / 3; grid-row: 1;     }  /* sister: wide, top left */
+.plate:nth-child(1) { grid-column: 1;     grid-row: 2;     }  /* father: near-square */
+.plate:nth-child(2) { grid-column: 2;     grid-row: 2; height: 100%; align-self: stretch; } /* mother: near-square, no more shrink */
+.plate:nth-child(4) { grid-column: 3 / 5; grid-row: 1 / 3; }  /* friends: big block */
+
+/* keep faces in view */
+.plate:nth-child(1) img { object-position: 50% 15%; }
+.plate:nth-child(2) img { object-position: 50% 70%; }
+.plate.sister img       { object-position: center 40%; }
+
+/* small frames: name only, so the caption doesn't cover faces */
+.plate:nth-child(1) .plate-text p,
+.plate:nth-child(2) .plate-text p { display: none; }
+
+/* phones */
+@media (max-width: 720px) {
+  .plate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); }
+  .plate:nth-child(3) { grid-column: 1 / -1; grid-row: 1; }
+  .plate:nth-child(1) { grid-column: 1;      grid-row: 2; }
+  .plate:nth-child(2) { grid-column: 2;      grid-row: 2; }
+  .plate:nth-child(4) { grid-column: 1 / -1; grid-row: 3; }
+}
+
+
+.plate:nth-child(1) .plate-photo,
+.plate:nth-child(2) .plate-photo { background: #f7f1e6; }
+.plate:nth-child(1) img,
+.plate:nth-child(2) img { object-fit: contain; }
