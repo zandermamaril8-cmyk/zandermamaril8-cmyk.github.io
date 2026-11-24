@@ -907,47 +907,36 @@ h1 {
 .plate:nth-child(2) img { object-fit: contain; }
 
 
-/* ===== About popup: everything visible, no scrolling ===== */
-.pop.about[popover]:popover-open {
+/* ===== About popup: fits its content, no empty space, no scroll ===== */
+html body .pop.about[popover]:popover-open {
   display: flex !important;
   flex-direction: column !important;
-  height: auto !important;
+  height: fit-content !important;     /* shrinks to the content: no empty space */
   max-height: 97dvh !important;
   overflow: hidden !important;
-  padding: .9em 1.2em !important;
-  font-size: clamp(9px, 1.9vh, 15px);   /* everything inside scales with window height */
+  padding: 1em 1.3em 1.1em !important;
+  font-size: clamp(9px, 2.1vh, 16px); /* text grows to use the window height */
 }
 
-.pop.about h2 { flex: none !important; font-size: 2em !important; margin: 0 0 .5em !important; }
+html body .pop.about h2 { flex: none !important; font-size: 2em !important; margin: 0 0 .5em !important; }
 
-.pop.about .about-grid {
+html body .pop.about .about-grid {
   flex: none !important;
+  height: auto !important;
   overflow: visible !important;
   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-  gap: .5em !important;
+  gap: .55em !important;
   padding: 0 !important;
 }
-.pop.about .span-2 { grid-column: span 3 !important; }   /* 4 small cards per row */
-.pop.about .span-3 { grid-column: span 6 !important; }
-.pop.about .span-6 { grid-column: span 12 !important; }
+html body .pop.about .span-2 { grid-column: span 3 !important; }
+html body .pop.about .span-3 { grid-column: span 6 !important; }
+html body .pop.about .span-6 { grid-column: span 12 !important; }
 
-.pop.about .info-card { padding: .5em .7em .55em !important; border-radius: .5em; }
-.pop.about .info-card h3 { font-size: .72em; margin: 0 0 .25em; gap: .4em; }
-.pop.about .info-card p  { font-size: .85em !important; line-height: 1.3 !important; }
-.pop.about .ico { width: 1em; height: 1em; }
+html body .pop.about .info-card { padding: .55em .75em .6em !important; border-radius: .5em; }
+html body .pop.about .info-card h3 { font-size: .72em; margin: 0 0 .25em; gap: .4em; }
+html body .pop.about .info-card p  { font-size: .85em !important; line-height: 1.3 !important; }
+html body .pop.about .ico { width: 1em; height: 1em; }
 
-.pop.about .edu-row { gap: .6em; margin-top: .3em; }
-.pop.about .edu-row .year   { font-size: .75em; }
-.pop.about .edu-row strong  { font-size: .82em; }
-.pop.about .edu-row p       { font-size: .75em; line-height: 1.3; }
-
-.pop.about .pop-nav { flex: none !important; margin-top: .7em !important; }
-.pop.about .btn { font-size: .8em; padding: .55em 1.3em; }
-
-/* phones: too small to fit everything, so allow scrolling there */
-@media (max-width: 720px) {
-  .pop.about[popover]:popover-open { height: 97dvh !important; font-size: 14px; }
-  .pop.about .about-grid { flex: 1 1 0 !important; min-height: 0 !important; overflow-y: auto !important; align-content: start; }
-  .pop.about .span-2 { grid-column: span 6 !important; }
-  .pop.about .span-3 { grid-column: span 12 !important; }
-}
+html body .pop.about .edu-row { gap: .6em; margin-top: .3em; }
+html body .pop.about .edu-row .year  { font-size: .75em; }
+html body .pop.about .edu-row
