@@ -207,40 +207,55 @@
       <button class="btn primary" onclick="goTo('achievements-pop', 'family')">Next &#8594;</button>
     </div>
   </section>
-
-  <!-- Family & Friends -->
   <section class="pop fam-pop" id="family" popover>
     <header class="fam-head">
       <h2>Family &amp; Friends</h2>
       <p class="fam-tag">The people behind the code</p>
     </header>
 
-    <div class="fam-body">
-      <h3 class="fam-section">Family</h3>
-      <div class="fam-grid">
-        <article class="fam-card" style="--i:0">
-          <img src="akopapa.jpg" alt="Jeffrey Young Mamaril, father" style="object-position: 50% 12%">
-          <div class="fam-info"><h4>Jeffrey Young Mamaril</h4><span class="role">Father</span></div>
-        </article>
-        <article class="fam-card" style="--i:1">
-          <img src="akomama.jpg" alt="Maribeth Escosio Mamaril, mother" style="object-posistion: 50% 0%">
-          <div class="fam-info"><h4>Maribeth Escosio Mamaril</h4><span class="role">Mother</span></div>
-        </article>
-     <article class="fam-card sister" style="--i:2">
-  <img src="cat.jpg" alt="Nicole Escosio Mamaril, younger sister">
-  <div class="fam-info"><h4>Nicole Escosio Mamaril</h4><span class="role">Younger Sibling</span></div>
-</article>
-      </div>
+    <div class="plate-grid">
+      <article class="plate" style="--i:0">
+        <div class="plate-photo"><img src="akopapa.jpg" alt="Jeffrey Young Mamaril, father" style="object-position: 50% 12%"></div>
+        <div class="plate-text">
+          <span class="plate-index">01 · Family</span>
+          <h4>Father</h4>
+          <p>Jeffrey Young Mamaril</p>
+        </div>
+      </article>
 
-      <h3 class="fam-section">Friends</h3>
-      <div class="fam-grid">
-        <!-- EDIT: replace the name, the letter, and (optionally) swap the .avatar div for an <img src="photo.jpg" alt="..."> -->
-        <article class="fam-card friend" style="--i:3; --h:265">
-          <img src ="feng.jpeg" alt = "ma friends">
-          <div class="fam-info"><span class="role">Friend</span></div>
-        </article>
-      
-      </div>
+      <article class="plate" style="--i:1">
+        <div class="plate-photo"><img src="akomama.jpg" alt="Maribeth Escosio Mamaril, mother" style="object-position: 50% 0%"></div>
+        <div class="plate-text">
+          <span class="plate-index">02 · Family</span>
+          <h4>Mother</h4>
+          <p>Maribeth Escosio Mamaril</p>
+        </div>
+      </article>
+
+      <article class="plate sister" style="--i:2">
+        <div class="plate-photo"><img src="cat.jpg" alt="Nicole Escosio Mamaril, younger sister"></div>
+        <div class="plate-text">
+          <span class="plate-index">03 · Family</span>
+          <h4>Younger Sister</h4>
+          <p>Nicole Escosio Mamaril</p>
+        </div>
+      </article>
+
+      <article class="plate" style="--i:3">
+        <div class="plate-photo"><img src="feng.jpeg" alt="My friends"></div>
+        <div class="plate-text">
+          <span class="plate-index">04 · Friends</span>
+          <h4>Friends</h4>
+          <p>The people I knew since senior and junior Highsschool</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="pop-nav">
+      <button class="btn" onclick="goTo('family', 'achievements-pop')">&#8592; Back</button>
+      <button class="btn close-btn" popovertarget="family" popovertargetaction="hide">Close</button>
+    </div>
+  </section>
 
       
     </div>
