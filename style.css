@@ -780,3 +780,38 @@ h1 {
 }
 
 
+/* Modal fits the screen, no scrolling */
+.family-modal {
+  max-height: 90vh;
+  overflow: hidden;          /* removes the scroll */
+  display: flex;
+  flex-direction: column;
+}
+
+.family-modal .modal-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+/* Family row gets more height, friends row less */
+.family-grid  { flex: 3; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.friends-grid { flex: 2; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.family-card,
+.friend-card { min-height: 0; overflow: hidden; }
+
+.family-card img,
+.friend-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shift the crop so your sister is visible */
+.family-card.sister img {
+  object-position: 85% center;   /* try 70% to 100% until you both fit */
+}
