@@ -907,29 +907,36 @@ h1 {
 .plate:nth-child(2) img { object-fit: contain; }
 
 
-/* ===== About popup: buttons always visible, cards scroll ===== */
-.pop.about:popover-open {
-  display: flex;
-  flex-direction: column;
+/* ===== About popup: fixed height, buttons pinned, cards scroll ===== */
+.pop.about[popover]:popover-open {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 92dvh !important;
+  max-height: 92dvh !important;
+  overflow: hidden !important;
+  transform: none !important;
 }
 
+.pop.about h2 { flex: none !important; margin-bottom: .7rem !important; }
+
 .pop.about .about-grid {
-  flex: 1 1 auto;
-  min-height: 0;          /* lets the grid shrink so it can scroll */
-  overflow-y: auto;
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  align-content: start !important;
+  gap: .6rem !important;
   padding-right: .4rem;
 }
 
+.pop.about .info-card { padding: .6rem .8rem; }
+
 .pop.about .pop-nav {
-  flex: none;             /* never gets pushed out of view */
-  margin-top: .8rem;
+  flex: none !important;
+  margin-top: .8rem !important;
 }
 
-/* slim scrollbar that matches the purple theme */
 .pop.about .about-grid::-webkit-scrollbar { width: 6px; }
 .pop.about .about-grid::-webkit-scrollbar-thumb {
   background: rgba(124, 58, 237, .6);
   border-radius: 6px;
 }
-.pop.about .info-card { padding: .6rem .8rem; }
-.pop.about .about-grid { gap: .6rem; }
