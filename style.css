@@ -780,26 +780,64 @@ h1 {
 }
 
 
-/* Modal fits the screen, no scrolling */
-.family-modal {
-  max-height: 90vh;
-  overflow: hidden;          /* removes the scroll */
-  display: flex;
-  flex-direction: column;
+/* Collage layout: staggered landscape frames */
+.fam-grid {
+  gap: 18px;
+  align-items: stretch;
 }
 
-.family-modal .modal-body {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  overflow: hidden;
+/* Family row: sister gets the widest frame */
+.fam-body .fam-grid:first-of-type { grid-template-columns: 1fr 1fr 1.5fr; }
+.fam-body .fam-grid:first-of-type .fam-card:nth-child(1) { height: 100%; align-self: start; }
+.fam-body .fam-grid:first-of-type .fam-card:nth-child(2) { height: 84%;  align-self: end; }
+.fam-body .fam-grid:first-of-type .fam-card:nth-child(3) { height: 92%;  align-self: start; }
+
+/* Friends row: sizes mirrored so it doesn't look repeated */
+.fam-body .fam-grid:last-of-type { grid-template-columns: 1.5fr 1fr 1fr; }
+.fam-body .fam-grid:last-of-type .fam-card:nth-child(1) { height: 90%;  align-self: end; }
+.fam-body .fam-grid:last-of-type .fam-card:nth-child(2) { height: 100%; align-self: start; }
+.fam-body .fam-grid:last-of-type .fam-card:nth-child(3) { height: 80%;  align-self: end; }
+
+/* thin light frame like the template */
+.fam-card {
+  border: 2px solid rgba(245, 238, 225, .85);
+  border-radius: 6px;
 }
 
-.fam-card.sister img {
-  object-fit: contain !important;
-  object-position: center !important;
-  background: #0b1020;
+/* phones: back to a simple even grid */
+@media (max-width: 720px) {
+  .fam-body .fam-grid:first-of-type,
+  .fam-body .fam-grid:last-of-type { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fam-body .fam-grid .fam-card { height: 100% !important; align-self: stretch !important; }
 }
 
+/* Collage layout: staggered landscape frames */
+.fam-grid {
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Family row: sister gets the widest frame */
+.fam-body .fam-grid:first-of-type { grid-template-columns: 1fr 1fr 1.5fr; }
+.fam-body .fam-grid:first-of-type .fam-card:nth-child(1) { height: 100%; align-self: start; }
+.fam-body .fam-grid:first-of-type .fam-card:nth-child(2) { height: 84%;  align-self: end; }
+.fam-body .fam-grid:first-of-type .fam-card:nth-child(3) { height: 92%;  align-self: start; }
+
+/* Friends row: sizes mirrored so it doesn't look repeated */
+.fam-body .fam-grid:last-of-type { grid-template-columns: 1.5fr 1fr 1fr; }
+.fam-body .fam-grid:last-of-type .fam-card:nth-child(1) { height: 90%;  align-self: end; }
+.fam-body .fam-grid:last-of-type .fam-card:nth-child(2) { height: 100%; align-self: start; }
+.fam-body .fam-grid:last-of-type .fam-card:nth-child(3) { height: 80%;  align-self: end; }
+
+/* thin light frame like the template */
+.fam-card {
+  border: 2px solid rgba(245, 238, 225, .85);
+  border-radius: 6px;
+}
+
+/* phones: back to a simple even grid */
+@media (max-width: 720px) {
+  .fam-body .fam-grid:first-of-type,
+  .fam-body .fam-grid:last-of-type { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fam-body .fam-grid .fam-card { height: 100% !important; align-self: stretch !important; }
+}
