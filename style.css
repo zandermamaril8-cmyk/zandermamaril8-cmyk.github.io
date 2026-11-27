@@ -1087,3 +1087,15 @@ html body .pop.about .edu-row
   .modal, .modal h2, .gallery .photo-card { animation: none; }
   .photo-card, .photo-card img, .photo-card::after { transition: none; }
 }
+
+
+/* ===== Full-body portrait card (head to shoes, like the reference) ===== */
+.portrait img {
+  object-fit: contain;
+  object-position: center bottom;
+  padding: .5rem;
+  background: linear-gradient(160deg, rgba(138, 43, 226, .22), rgba(11, 16, 32, .92));
+  border: 1px solid rgba(138, 43, 226, .45);
+  border-radius: 26px;
+  filter: none;
+}
