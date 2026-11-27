@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="carousel.css?v=1">
 </head>
 
 <body>
@@ -235,50 +236,13 @@
       <p class="fam-tag">The people behind the code</p>
     </header>
 
-    <!-- Constellation: every person is a star, connected by gold lines -->
-    <div class="const-stage" id="const-stage">
-      <svg id="const-svg" aria-hidden="true"></svg>
-
-      <div class="star" data-id="father" data-role="Father" data-name="Jeffrey Young Mamaril" data-line="Where my story begins." style="--x:24%;--y:15%;--i:1">
-        <button class="star-btn" type="button" aria-label="Father: Jeffrey Young Mamaril">
-          <span class="ring"><img src="akopapa.jpg" alt="Jeffrey Young Mamaril, father" style="object-position:50% 12%"></span>
-          <span class="star-label">Father</span>
-        </button>
-      </div>
-
-      <div class="star" data-id="mother" data-role="Mother" data-name="Maribeth Escosio Mamaril" data-line="The heart of our home." style="--x:76%;--y:15%;--i:2">
-        <button class="star-btn" type="button" aria-label="Mother: Maribeth Escosio Mamaril">
-          <span class="ring"><img src="akomama.jpg" alt="Maribeth Escosio Mamaril, mother" style="object-position:50% 0%"></span>
-          <span class="star-label">Mother</span>
-        </button>
-      </div>
-
-      <div class="star me" data-id="me" data-role="Me" data-name="Zander Escosio Mamaril" data-line="BSIT student, Web Technology." style="--x:50%;--y:49%;--i:0">
-        <button class="star-btn" type="button" aria-label="Me: Zander Escosio Mamaril">
-          <span class="ring"><img src="fornal.jpg" alt="Zander" style="object-position:50% 8%"></span>
-          <span class="star-label">Me</span>
-        </button>
-      </div>
-
-      <div class="star" data-id="sister" data-role="Younger Sister" data-name="Nicole Escosio Mamaril" data-line="My little sister." style="--x:24%;--y:83%;--i:3">
-        <button class="star-btn" type="button" aria-label="Younger sister: Nicole Escosio Mamaril">
-          <span class="ring"><img src="cat.jpg" alt="Nicole Escosio Mamaril, younger sister"></span>
-          <span class="star-label">Sister</span>
-        </button>
-      </div>
-
-      <div class="star" data-id="friends" data-role="Friends" data-name="My Friends" data-line="The people I knew since senior and junior high school." style="--x:76%;--y:83%;--i:4">
-        <button class="star-btn" type="button" aria-label="Friends">
-          <span class="ring"><img src="feng.jpeg" alt="My friends"></span>
-          <span class="star-label">Friends</span>
-        </button>
-      </div>
-    </div>
+    <!-- Carousel: drag, swipe, or tap a photo -->
+    <div class="fam-carousel" id="fam-carousel"></div>
 
     <div class="const-card" id="const-card" aria-live="polite">
-      <span class="const-role">Tap a star</span>
+      <span class="const-role">Swipe or tap a photo</span>
       <p class="const-name">Meet the people behind the code</p>
-      <p class="const-line">Each star is someone who shaped who I am.</p>
+      <p class="const-line">Each one is someone who shaped who I am.</p>
     </div>
 
     <div class="pop-nav">
@@ -353,147 +317,58 @@
   </script>
 
 
+  <script src="carousel.js?v=1"></script>
   <script>
-    // Family & Friends constellation
+    // Family & Friends carousel
     (function () {
       var pop = document.getElementById('family');
-      var stage = document.getElementById('const-stage');
-      var svg = document.getElementById('const-svg');
       var card = document.getElementById('const-card');
-      var stars = [].slice.call(stage.querySelectorAll('.star'));
-      var links = [['father','mother'],['father','me'],['mother','me'],['me','sister'],['me','friends']];
       var DEFAULT = card.innerHTML;
 
-      function draw() {
-        var w = stage.clientWidth, h = stage.clientHeight;
-        if (!w || !h) return;
-        svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
-        var pos = {};
-        stars.forEach(function (el) {
-          pos[el.dataset.id] = { x: el.offsetLeft + el.offsetWidth / 2, y: el.offsetTop + el.offsetWidth / 2 };
-        });
-        var out = '', i;
-        for (i = 0; i < 28; i++) {
-          out += '<circle class="sky-dot" cx="' + (Math.random() * w).toFixed(1) + '" cy="' + (Math.random() * h).toFixed(1) +
-                 '" r="' + (0.6 + Math.random() * 1.2).toFixed(1) + '" style="--t:' + (Math.random() * 3).toFixed(2) + 's"/>';
-        }
-        links.forEach(function (l, k) {
-          var a = pos[l[0]], b = pos[l[1]];
-          var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y;
-          var bend = (k % 2 ? -1 : 1) * 0.16;
-          var d = 'M' + a.x + ' ' + a.y + ' Q' + (mx - dy * bend) + ' ' + (my + dx * bend) + ' ' + b.x + ' ' + b.y;
-          out += '<path id="lk' + k + '" class="link" data-a="' + l[0] + '" data-b="' + l[1] + '" pathLength="1" d="' + d + '" style="--d:' + (k * 0.18) + 's"/>';
-          out += '<circle class="pulse" r="3.2"><animateMotion dur="' + (3.2 + k * 0.6) + 's" begin="' + (1.6 + k * 0.3) + 's" repeatCount="indefinite"><mpath href="#lk' + k + '"/></animateMotion></circle>';
-        });
-        svg.innerHTML = out;
-      }
+      var people = [
+        { src: 'akopapa.jpg', position: '50% 12%', alt: 'Jeffrey Young Mamaril, father', role: 'Father', title: 'Jeffrey Young Mamaril', line: 'Where my story begins.' },
+        { src: 'akomama.jpg', position: '50% 0%',  alt: 'Maribeth Escosio Mamaril, mother', role: 'Mother', title: 'Maribeth Escosio Mamaril', line: 'The heart of our home.' },
+        { src: 'fornal.jpg',  position: '50% 8%',  alt: 'Zander', role: 'Me', title: 'Zander Escosio Mamaril', line: 'BSIT student, Web Technology.' },
+        { src: 'cat.jpg',     position: '50% 50%', alt: 'Nicole Escosio Mamaril, younger sister', role: 'Younger Sister', title: 'Nicole Escosio Mamaril', line: 'My little sister.' },
+        { src: 'feng.jpeg',   position: '50% 50%', alt: 'My friends', role: 'Friends', title: 'My Friends', line: 'The people I knew since senior and junior high school.' }
+      ];
 
-      function select(el) {
-        stars.forEach(function (s) { s.classList.toggle('active', s === el); });
-        [].forEach.call(svg.querySelectorAll('.link'), function (p) {
-          p.classList.toggle('hot', p.dataset.a === el.dataset.id || p.dataset.b === el.dataset.id);
-        });
+      function showCard(p) {
         card.innerHTML = '<span class="const-role"></span><p class="const-name"></p><p class="const-line"></p>';
-        card.children[0].textContent = el.dataset.role;
-        card.children[1].textContent = el.dataset.name;
-        card.children[2].textContent = el.dataset.line;
+        card.children[0].textContent = p.role;
+        card.children[1].textContent = p.title;
+        card.children[2].textContent = p.line;
         card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
       }
 
-      stars.forEach(function (el) {
-        el.querySelector('.star-btn').addEventListener('click', function () { select(el); });
+      var carousel = CircularCarousel(document.getElementById('fam-carousel'), people, {
+        preset: 'panorama',
+        intro: 'rise',
+        cardWidth: 220,
+        aspectRatio: 0.75,
+        gap: 25,
+        speed: 14,
+        autoplay: 'drift',
+        direction: 'left',
+        momentum: 0.6,
+        snap: true,
+        pauseOnHover: true,
+        focusOnClick: true,
+        draggable: true,
+        parallax: 0.3,
+        stretch: 0.5,
+        fadeColor: '#000000',
+        depthFade: 0.55,
+        innerShade: 0.6,
+        cornerRadius: 12,
+        onChange: function (i, p) { showCard(p); },
+        onItemClick: function (p) { showCard(p); }
       });
 
       pop.addEventListener('toggle', function (e) {
         if (e.newState !== 'open') return;
-        stars.forEach(function (s) { s.classList.remove('active'); });
         card.innerHTML = DEFAULT; card.classList.remove('swap');
-        requestAnimationFrame(function () { requestAnimationFrame(draw); });
-      });
-      addEventListener('resize', function () { if (pop.matches(':popover-open')) draw(); });
-    })();
-  </script>
-
-
-  <script>
-    // Family & Friends: tap a photo and it grows to a big view
-    (function () {
-      var pop = document.getElementById('family');
-      var stage = document.getElementById('const-stage');
-      var stars = [].slice.call(stage.querySelectorAll('.star'));
-      var overlay = null, current = null, EASE = 'cubic-bezier(.2,.8,.2,1)';
-
-      stars.forEach(function (s) {
-        var ring = s.querySelector('.ring'), img = s.querySelector('img');
-        ring.dataset.initial = (s.dataset.name || '?').replace(/^My /, '').charAt(0);
-        img.addEventListener('error', function () { ring.classList.add('broken'); });
-        if (img.complete && img.naturalWidth === 0) ring.classList.add('broken');
-      });
-
-      function rel(el) {
-        var p = pop.getBoundingClientRect(), r = el.getBoundingClientRect();
-        return { left: r.left - p.left - pop.clientLeft, top: r.top - p.top - pop.clientTop, width: r.width, height: r.height };
-      }
-      function box(b, radius) {
-        return { left: b.left + 'px', top: b.top + 'px', width: b.width + 'px', height: b.height + 'px', borderRadius: radius };
-      }
-
-      function openZoom(star) {
-        if (overlay) return;
-        var ring = star.querySelector('.ring'), img = star.querySelector('img');
-        var broken = ring.classList.contains('broken');
-        var from = rel(ring);
-
-        overlay = document.createElement('div');
-        overlay.className = 'zoom';
-        overlay.innerHTML = '<figure class="zoom-fig">' + (broken ? '<div class="zoom-ph"></div>' : '<img alt="">') +
-          '<figcaption class="zoom-cap"><span class="const-role"></span><strong></strong><em></em></figcaption></figure>' +
-          '<button class="zoom-x" type="button" aria-label="Close photo">&times;</button>';
-        var fig = overlay.firstChild;
-        fig.querySelector('.const-role').textContent = star.dataset.role;
-        fig.querySelector('strong').textContent = star.dataset.name;
-        fig.querySelector('em').textContent = star.dataset.line;
-        if (broken) {
-          fig.querySelector('.zoom-ph').textContent = ring.dataset.initial;
-        } else {
-          var big = fig.querySelector('img');
-          big.src = img.currentSrc || img.src;
-          big.alt = img.alt;
-          big.style.objectPosition = img.style.objectPosition || 'center';
-        }
-        pop.appendChild(overlay);
-
-        var ratio = (!broken && img.naturalWidth) ? img.naturalWidth / img.naturalHeight : 0.8;
-        ratio = Math.max(0.7, Math.min(1.5, ratio));
-        var maxW = pop.clientWidth * 0.9, maxH = pop.clientHeight * 0.78;
-        var w = Math.min(maxW, maxH * ratio), h = w / ratio;
-        var to = { left: (pop.clientWidth - w) / 2, top: (pop.clientHeight - h) / 2, width: w, height: h };
-
-        var fin = box(to, '22px');
-        for (var k in fin) fig.style[k] = fin[k];
-        fig.animate([box(from, '50%'), fin], { duration: 650, easing: EASE });
-        overlay.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 350, easing: 'ease' });
-        overlay.addEventListener('click', closeZoom);
-        current = ring;
-      }
-
-      function closeZoom() {
-        if (!overlay) return;
-        var o = overlay, fig = o.firstChild;
-        overlay = null;
-        var a = rel(fig), b = rel(current);
-        fig.querySelector('.zoom-cap').style.opacity = 0;
-        fig.querySelector('.zoom-cap').style.animation = 'none';
-        fig.animate([box(a, '22px'), box(b, '50%')], { duration: 480, easing: EASE, fill: 'forwards' });
-        var f = o.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 480, easing: 'ease', fill: 'forwards' });
-        f.onfinish = function () { o.remove(); };
-      }
-
-      stars.forEach(function (s) {
-        s.querySelector('.star-btn').addEventListener('click', function () { openZoom(s); });
-      });
-      pop.addEventListener('toggle', function (e) {
-        if (e.newState !== 'open' && overlay) { overlay.remove(); overlay = null; }
+        requestAnimationFrame(function () { requestAnimationFrame(function () { carousel.wake(); carousel.restartIntro(); }); });
       });
     })();
   </script>
