@@ -12,6 +12,9 @@
 
 <body>
 
+  <!-- animated gold network background -->
+  <canvas id="bg-net" aria-hidden="true"></canvas>
+
   <!-- TOP BAR: brand | menu -->
   <header class="topbar">
     <a class="brand" href="#top">Z.E.M.</a>
@@ -283,6 +286,62 @@
       document.getElementById(from).hidePopover();
       document.getElementById(to).showPopover();
     }
+  </script>
+
+
+  <script>
+    // Gold network background (Vanta-style, no libraries)
+    (function () {
+      var c = document.getElementById('bg-net'), x = c.getContext('2d');
+      var GOLD = '245,184,61', pts = [], W, H, D, link, still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var ptr = { x: -9999, y: -9999 };
+
+      function size() {
+        D = Math.min(window.devicePixelRatio || 1, 2);
+        W = innerWidth; H = innerHeight;
+        c.width = W * D; c.height = H * D;
+        x.setTransform(D, 0, 0, D, 0, 0);
+        link = Math.max(110, Math.min(W, H) * 0.22);
+        var n = Math.round(Math.min(110, Math.max(36, W * H / 14000)));
+        pts = [];
+        for (var i = 0; i < n; i++) pts.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35
+        });
+      }
+
+      function draw() {
+        x.clearRect(0, 0, W, H);
+        var i, j, p, q, dx, dy, d;
+        for (i = 0; i < pts.length; i++) {
+          p = pts[i];
+          if (!still) {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < -20 || p.x > W + 20) p.vx *= -1;
+            if (p.y < -20 || p.y > H + 20) p.vy *= -1;
+            dx = p.x - ptr.x; dy = p.y - ptr.y; d = Math.hypot(dx, dy);
+            if (d < 120 && d > 0) { p.x += dx / d * .8; p.y += dy / d * .8; }
+          }
+          for (j = i + 1; j < pts.length; j++) {
+            q = pts[j];
+            d = Math.hypot(p.x - q.x, p.y - q.y);
+            if (d < link) {
+              x.strokeStyle = 'rgba(' + GOLD + ',' + (1 - d / link) * .55 + ')';
+              x.lineWidth = 1;
+              x.beginPath(); x.moveTo(p.x, p.y); x.lineTo(q.x, q.y); x.stroke();
+            }
+          }
+          x.fillStyle = 'rgba(' + GOLD + ',.9)';
+          x.beginPath(); x.arc(p.x, p.y, 1.8, 0, 6.2832); x.fill();
+        }
+        if (!still) requestAnimationFrame(draw);
+      }
+
+      addEventListener('resize', function () { size(); if (still) draw(); });
+      addEventListener('pointermove', function (e) { ptr.x = e.clientX; ptr.y = e.clientY; });
+      addEventListener('pointerleave', function () { ptr.x = ptr.y = -9999; });
+      size(); draw();
+    })();
   </script>
 
 </body>
