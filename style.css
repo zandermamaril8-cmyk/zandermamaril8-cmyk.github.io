@@ -1547,19 +1547,42 @@ html body .pop.about .about-edu { margin-top: .55em; }
   html body .pop.about .about-cols { grid-template-columns: 1fr; max-height: 55dvh; }
 }
 
-.about-sec dd a {
-  color: var(--spell-soft);
+body {
+  background-color: #09182b;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid rgba(136, 229, 252, 0.35);
+  background-color: rgba(16, 42, 72, 0.65);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(168, 85, 247, .6);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
-.about-sec dd a:hover {
-  color: #fff;
-  border-bottom-style: solid;
+
+.social-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #8be9fd; /* Bright cyan so it shows clearly on dark backgrounds */
+  transition: fill 0.2s ease;
 }
-.info-card p a {
-  color: var(--spell-soft);
-  text-decoration: none;
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  border-color: #8be9fd;
+  background-color: rgba(24, 62, 105, 0.85);
 }
-.info-card p a:hover {
-  color: #fff;
+
+.social-btn:hover svg {
+  fill: #ffffff;
 }
