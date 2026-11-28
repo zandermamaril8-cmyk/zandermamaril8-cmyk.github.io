@@ -1677,3 +1677,10 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.icon-box svg,
+.icon-box i {
+  color: #e2e8f0;
+  fill: #e2e8f0;
+  width: 24px;
+  height: 24px;
+}
