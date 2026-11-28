@@ -34,6 +34,23 @@
       <p class="label">Zander Escosio Mamaril</p>
       <h1>An aspiring full-stack developer.</h1>
       <p class="sub">BSIT student specializing in Web Technology, dedicated to building complete web applications from user interface to database management.</p>
+      <div class="socials">
+        <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="https://facebook.com/YOUR-PROFILE" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:zemzemescosio@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
     </div>
 
     <figure class="portrait">
@@ -234,11 +251,47 @@
       <p class="fam-tag">The people behind the code</p>
     </header>
 
-    <!-- Carousel: drag, swipe, or tap a photo -->
-    <div class="fam-carousel" id="fam-carousel"></div>
+    <!-- Family tree: hover, tap, or tilt a card -->
+    <div class="fam-stage">
+      <div class="tree">
+        <div class="gen parents">
+          <button class="person" style="--i:0" data-role="Father" data-name="Jeffrey Young Mamaril" data-line="Where my story begins.">
+            <img src="akopapa.jpg" alt="Jeffrey Young Mamaril, father" style="object-position:50% 12%">
+            <span class="person-info"><span class="chip">Father</span><strong>Jeffrey Young Mamaril</strong></span>
+          </button>
+          <div class="union" aria-hidden="true"><span>&#9829;</span></div>
+          <button class="person" style="--i:1" data-role="Mother" data-name="Maribeth Escosio Mamaril" data-line="The heart of our home.">
+            <img src="mama.jpg" alt="Maribeth Escosio Mamaril, mother" style="object-position:50% 0%">
+            <span class="person-info"><span class="chip">Mother</span><strong>Maribeth Escosio Mamaril</strong></span>
+          </button>
+        </div>
+
+        <div class="trunk" aria-hidden="true"></div>
+
+        <div class="gen kids">
+          <div class="branch">
+            <button class="person me" style="--i:2" data-role="Me &middot; Eldest Sibling" data-name="Zander Escosio Mamaril" data-line="The eldest, building a future one line of code at a time.">
+              <img src="business.jpg" alt="Zander Escosio Mamaril" style="object-position:50% 8%">
+              <span class="person-info"><span class="chip">Me</span><strong>Zander Escosio Mamaril</strong></span>
+            </button>
+          </div>
+          <div class="branch">
+            <button class="person" style="--i:3" data-role="Younger Sister" data-name="Nicole Escosio Mamaril" data-line="My little sister.">
+              <img src="cat.jpg" alt="Nicole Escosio Mamaril, younger sister" style="object-position:50% 50%">
+              <span class="person-info"><span class="chip">Younger Sister</span><strong>Nicole Escosio Mamaril</strong></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button class="person wide" style="--i:4" data-role="Friends" data-name="My Friends" data-line="The people I knew since senior and junior high school.">
+        <img src="mafriend.jpeg" alt="My friends" style="object-position:50% 30%">
+        <span class="person-info"><span class="chip">Friends</span><strong>My Friends</strong><em>Since junior and senior high school</em></span>
+      </button>
+    </div>
 
     <div class="const-card" id="const-card" aria-live="polite">
-      <span class="const-role">Swipe or tap a photo</span>
+      <span class="const-role">Hover or tap a card</span>
       <p class="const-name">Meet the people behind the code</p>
       <p class="const-line">Each one is someone who shaped who I am.</p>
     </div>
@@ -315,78 +368,51 @@
   </script>
 
 
-  <script src="carousel.js?v=1"></script>
   <script>
-    // Family & Friends carousel
+    // Family & Friends: interactive tree (tilt + spotlight)
     (function () {
       var pop = document.getElementById('family');
       var card = document.getElementById('const-card');
       var DEFAULT = card.innerHTML;
+      var cards = pop.querySelectorAll('.person');
+      var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      var people = [
-        { src: 'akopapa.jpg', position: '50% 12%', alt: 'Jeffrey Young Mamaril, father', role: 'Father', title: 'Jeffrey Young Mamaril', line: 'Where my story begins.' },
-        { src: 'mama.jpg', position: '50% 0%',  alt: 'Maribeth Escosio Mamaril, mother', role: 'Mother', title: 'Maribeth Escosio Mamaril', line: 'The heart of our home.' },    
-        { src: 'cat.jpg',     position: '50% 50%', alt: 'Nicole Escosio Mamaril, younger sister', role: 'Younger Sister', title: 'Nicole Escosio Mamaril', line: 'My little sister.' },
-        { src: 'mafriend.jpeg',   position: '50% 50%', alt: 'My friends', role: 'Friends', title: 'My Friends', line: 'The people I knew since senior and junior high school.' }
-      ];
-
-      function showCard(p) {
+      function show(el) {
+        cards.forEach(function (c) { c.classList.toggle('active', c === el); });
         card.innerHTML = '<span class="const-role"></span><p class="const-name"></p><p class="const-line"></p>';
-        card.children[0].textContent = p.role;
-        card.children[1].textContent = p.title;
-        card.children[2].textContent = p.line;
+        card.children[0].textContent = el.dataset.role;
+        card.children[1].textContent = el.dataset.name;
+        card.children[2].textContent = el.dataset.line;
         card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
       }
 
-      var carousel = CircularCarousel(document.getElementById('fam-carousel'), people, {
-        preset: 'panorama',
-        intro: 'rise',
-        cardWidth: 220,
-        aspectRatio: 0.75,
-        gap: 25,
-        speed: 14,
-        autoplay: 'drift',
-        direction: 'left',
-        momentum: 0.6,
-        snap: true,
-        pauseOnHover: true,
-        focusOnClick: true,
-        draggable: true,
-        parallax: 0.3,
-        stretch: 0.5,
-        fadeColor: '#000000',
-        depthFade: 0.55,
-        innerShade: 0.6,
-        cornerRadius: 12,
-        onChange: function (i, p) { showCard(p); },
-        onItemClick: function (p) { showCard(p); }
+      cards.forEach(function (el) {
+        el.addEventListener('click', function () { show(el); });
+        el.addEventListener('focus', function () { show(el); });
+        el.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') show(el); });
+        el.addEventListener('pointermove', function (e) {
+          if (still || e.pointerType !== 'mouse') return;
+          var r = el.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+          el.style.setProperty('--ry', ((x - .5) * 12) + 'deg');
+          el.style.setProperty('--rx', ((.5 - y) * 12) + 'deg');
+          el.style.setProperty('--mx', (x * 100) + '%');
+          el.style.setProperty('--my', (y * 100) + '%');
+        });
+        el.addEventListener('pointerleave', function () {
+          el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg');
+        });
       });
 
       pop.addEventListener('toggle', function (e) {
         if (e.newState !== 'open') return;
         card.innerHTML = DEFAULT; card.classList.remove('swap');
-        requestAnimationFrame(function () { requestAnimationFrame(function () { carousel.wake(); carousel.restartIntro(); }); });
+        cards.forEach(function (c) { c.classList.remove('active'); });
       });
     })();
   </script>
 
 
-<div class="socials">
-  <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="LinkedIn">
-    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-  </a>
-  <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="GitHub">
-    <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-  </a>
-  <a href="https://facebook.com/YOUR-PROFILE" target="_blank" rel="noopener" aria-label="Facebook">
-    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-  </a>
-  <a href="https://instagram.com/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="Instagram">
-    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-  </a>
-  <a href="mailto:zemzemescosio@gmail.com" aria-label="Email">
-    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-  </a>
-</div>
+
 </body>
 </html>
