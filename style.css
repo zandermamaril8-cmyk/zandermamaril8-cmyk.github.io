@@ -1546,3 +1546,13 @@ html body .pop.about .about-edu { margin-top: .55em; }
 @media (max-width: 520px) {
   html body .pop.about .about-cols { grid-template-columns: 1fr; max-height: 55dvh; }
 }
+
+.about-sec dd a {
+  color: var(--spell-soft);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(168, 85, 247, .6);
+}
+.about-sec dd a:hover {
+  color: #fff;
+  border-bottom-style: solid;
+}
