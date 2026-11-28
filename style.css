@@ -1684,3 +1684,136 @@ body {
   width: 24px;
   height: 24px;
 }
+.about-modal {
+  max-width: 1120px;
+  margin: 12px auto;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #090514;
+  border: 1px solid #9d4edd;
+  color: #f4f1ff;
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+.about-header h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;
+  max-height: none;
+}
+
+.info-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.info-card {
+  background: rgba(24, 14, 48, 0.72);
+  border: 1px solid rgba(157, 78, 221, 0.28);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.info-card h3 {
+  margin: 0 0 6px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #c77dff;
+}
+
+.info-card dl {
+  margin: 0;
+}
+
+.info-card dl > div {
+  margin-bottom: 4px;
+}
+
+.info-card dt {
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  color: #9e94b8;
+  text-transform: uppercase;
+}
+
+.info-card dd {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.25;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+.edu-section {
+  background: rgba(24, 14, 48, 0.72);
+  border: 1px solid rgba(157, 78, 221, 0.28);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.edu-section h3 {
+  margin: 0 0 6px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #c77dff;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 10px;
+}
+
+.edu-year {
+  font-size: 9px;
+  color: #b5838d;
+}
+
+.edu-item span:last-child {
+  color: #cfc6e6;
+}
+
+.about-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.btn-close {
+  background: transparent;
+  color: #e0d7f5;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.btn-next {
+  background: #7b2cbf;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
