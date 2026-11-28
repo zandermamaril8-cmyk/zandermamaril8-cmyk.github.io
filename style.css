@@ -1556,3 +1556,10 @@ html body .pop.about .about-edu { margin-top: .55em; }
   color: #fff;
   border-bottom-style: solid;
 }
+.info-card p a {
+  color: var(--spell-soft);
+  text-decoration: none;
+}
+.info-card p a:hover {
+  color: #fff;
+}
